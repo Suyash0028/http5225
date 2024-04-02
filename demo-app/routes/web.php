@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/courses', [
+    'uses' => 'App\Http\Controllers\CourseController@index',
+    'as' => 'courses.index'
+]);

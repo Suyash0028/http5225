@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Student;
+use App\Models\Course;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -15,12 +16,24 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
 
         User::factory()->count(2)->create();
-        Student::factory()->count(20)->create();
+        
+        Course::factory()->create([
+            'CourseID' => 'Http5225',
+            'Name'=> 'PhP',
+            'Description'=> 'This is the PHP and laravel course'
+        ]);
+
+        Course::factory()->create([
+            'CourseID'=>  'Http5222',
+            'Name'=> 'Full Stack',
+            'Description'=> 'This is the full stack subject'
+        ]);
+        Course::factory()->create([
+            'CourseID'=>  'Http5227',
+            'Name'=> 'React',
+            'Description'=> 'This is the React course'
+        ]);
     }
 }
