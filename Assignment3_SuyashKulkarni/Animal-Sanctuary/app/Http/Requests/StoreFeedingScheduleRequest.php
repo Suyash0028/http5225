@@ -11,7 +11,7 @@ class StoreFeedingScheduleRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreFeedingScheduleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'animal_id' => 'required|exists:animals,id',
+            'feeding_time' => 'required|date_format:H:i',
+            'quantity' => 'required|numeric',
+            'feeding_frequency' => 'required|string'
         ];
     }
 }

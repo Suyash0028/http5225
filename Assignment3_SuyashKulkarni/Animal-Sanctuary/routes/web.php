@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnimalsController;
+use App\Http\Controllers\FeedingScheduleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,3 +16,14 @@ Route::get('animals/trashed', [AnimalsController::class, 'trashed'])->name('anim
 Route::get('animals/restore/{id}', [AnimalsController::class, 'trash'])->name('animals.restore');
 
 Route::resource('animals', AnimalsController::class);
+
+
+
+Route::get('feedingSchedules/trash/{id}', [FeedingScheduleController::class, 'trash'])->name('feedingSchedules.trash');
+
+Route::get('feedingSchedules/trashed', [FeedingScheduleController::class, 'trashed'])->name('feedingSchedules.trashed');
+
+Route::get('feedingSchedules/restore/{id}', [FeedingScheduleController::class, 'trash'])->name('feedingSchedules.restore');
+
+Route::resource('feedingSchedules', FeedingScheduleController::class);
+

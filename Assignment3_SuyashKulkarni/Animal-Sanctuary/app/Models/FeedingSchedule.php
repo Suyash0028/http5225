@@ -17,4 +17,9 @@ class FeedingSchedule extends Model
         'quantity',
         'feeding_frequency',
     ];
+
+    public function animals()
+    {
+        return $this->belongsTo(Animals::class);
+    }
 }
