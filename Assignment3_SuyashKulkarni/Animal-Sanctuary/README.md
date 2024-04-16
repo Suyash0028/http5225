@@ -7,60 +7,52 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Animal Sanctuary Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Overview
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Welcome to the Animal Sanctuary project! This project aims to manage the animals housed within a sanctuary, along with their feeding schedules. The project includes a database with two main tables: `animals` and `feeding_schedule`. The `animals` table contains information about each animal, while the `feeding_schedule` table manages the feeding schedules for each animal.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tables
 
-## Learning Laravel
+### Animals
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The `animals` table stores information about each animal residing in the sanctuary. Each animal entry includes the following fields:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **ID**: Unique identifier for the animal.
+- **Animal_Name**: The name of the animal.
+- **Species**: The species to which the animal belongs.
+- **Join_date**: The date when animal entered the sanctuary.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+### Feeding Schedule
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+The `feeding_schedule` table manages the feeding schedules for each animal. Each schedule entry includes the following fields:
 
-### Premium Partners
+- **ID**: Unique identifier for the feeding schedule.
+- **Animal ID**: Foreign key referencing the animal for which the schedule is created.
+- **Feeding_Time**: The time at which the animal is fed.
+- **Feeding_Frequency**: The frequency of providing food to the animal.
+- **Quantity**: The quantity of food provided.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Functionality
 
-## Contributing
+### Viewing Animals
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- List all animals along with their details from the `animals` table.
+- Clicking on a particular animal provides more detailed information, including their feeding schedule.
 
-## Code of Conduct
+### Viewing Feeding Schedule
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Each animal's detailed view includes their feeding schedule.
+- CRUD functionality for feeding schedule:
+  - **Create**: Add a new feeding schedule for an animal.
+  - **Read**: View the existing feeding schedule for an animal.
+  - **Update**: Modify the feeding schedule for an animal.
+  - **Delete**: Remove a feeding schedule entry for an animal.
 
-## Security Vulnerabilities
+## Getting Started
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. **Database Setup**: Ensure that you have a database set up with the appropriate tables (`animals` and `feeding_schedule`).
+2. **Connect to Database**: Update the database connection settings in your project to connect to your database.
+3. **Run the Application**: Start the application to begin managing the animal sanctuary and their feeding schedules.
